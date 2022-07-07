@@ -25,7 +25,7 @@ def header_chunk():
 # <event> = <MIDI event> | <sysex event> | <meta-event>
 # <meta-event> ex: FF 2F 00 - End of Track
 
-def track_chunk(inputs: List, tempo: int = 200):
+def track_chunk(inputs: List, tempo: int = 90):
     header = b'MTrk'
     
     last_status = None
