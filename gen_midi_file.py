@@ -90,8 +90,8 @@ def event_to_bytes(channel: int, evtype, param_note: int, value_vel: int):
 
     return bytes([status]), bytes(data)
 
-def gen_out_string(inputs: List):
-    return header_chunk() + track_chunk(inputs)
+def gen_out_string(inputs: List, tempo: int):
+    return header_chunk() + track_chunk(inputs, tempo)
 
 def write(output, filename):
     f = open(filename, 'wb')
@@ -99,33 +99,45 @@ def write(output, filename):
     f.close()
 
 if __name__ == "__main__":
+    DRUM_CH = 9
+    BASS_CH = 8
+    SYNTH_CH = 7
+    PAD_CH = 6
+
+    TEMPO = 160
+
+    NOTE_BASS_DRUM = 35
+    NOTE_CLOSED_HH = 42
+    NOTE_SNARE = 38
+    NOTE_CRASH = 49
     inputs = [
-        (0, 9, 'note_on', 35, 127),
-        (0, 9, 'note_on', 42, 127),
-        (DIVISIONS, 9, 'note_off', 35, 0),
-        (0, 9, 'note_off', 42, 0),
-        (0, 9, 'note_on', 42, 127),
-        (DIVISIONS, 9, 'note_off', 42, 0),
-        (0, 9, 'note_on', 42, 127),
-        (0, 9, 'note_on', 38, 127),
-        (DIVISIONS, 9, 'note_off', 42, 0),
-        (0, 9, 'note_off', 38, 0),
-        (0, 9, 'note_on', 42, 127),
-        (DIVISIONS, 9, 'note_off', 42, 0),
+        (0, 8, 'note_on', 35, 127),
+        (0, 8, 'note_on', 42, 127),
+        (DIVISIONS, 8, 'note_off', 35, 0),
+        (0, 8, 'note_off', 42, 0),
+        (0, 8, 'note_on', 42, 127),
+        (DIVISIONS, 8, 'note_off', 42, 0),
+        (0, 8, 'note_on', 42, 127),
+        (0, 8, 'note_on', 38, 127),
+        (DIVISIONS, 8, 'note_off', 42, 0),
+        (0, 8, 'note_off', 38, 0),
+        (0, 8, 'note_on', 42, 127),
+        (DIVISIONS, 8, 'note_off', 42, 0),
         
-        (0, 9, 'note_on', 35, 127),
-        (0, 9, 'note_on', 42, 127),
-        (DIVISIONS, 9, 'note_off', 35, 0),
-        (0, 9, 'note_off', 42, 0),
-        (0, 9, 'note_on', 42, 127),
-        (DIVISIONS, 9, 'note_off', 42, 0),
-        (0, 9, 'note_on', 42, 127),
-        (0, 9, 'note_on', 38, 127),
-        (DIVISIONS, 9, 'note_off', 42, 0),
-        (0, 9, 'note_off', 38, 0),
-        (0, 9, 'note_on', 42, 127),
-        (DIVISIONS, 9, 'note_off', 42, 0),
-        (0, 9, 'note_on', 49, 127),
+        (0, 8, 'note_on', 35, 127),
+        (0, 8, 'note_on', 42, 127),
+        (DIVISIONS, 8, 'note_off', 35, 0),
+        (0, 8, 'note_off', 42, 0),
+        (0, 8, 'note_on', 42, 127),
+        (DIVISIONS, 8, 'note_off', 42, 0),
+        (0, 8, 'note_on', 42, 127),
+        (0, 8, 'note_on', 38, 127),
+        (DIVISIONS, 8, 'note_off', 42, 0),
+        (0, 8, 'note_off', 38, 0),
+        (0, 8, 'note_on', 42, 127),
+        (DIVISIONS, 8, 'note_off', 42, 0),
+        (0, 8, 'note_on', 49, 127),
+        (3*DIVISIONS, 8, 'note_off', 49, 0),
         
         
 
@@ -133,4 +145,4 @@ if __name__ == "__main__":
 
     ]
 
-    write(gen_out_string(inputs), './local-files/test.mid')
+    write(gen_out_string(inputs, tempo=TEMPO), './local-files/blinding-lights.mid')

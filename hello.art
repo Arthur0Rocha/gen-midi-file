@@ -1,0 +1,13 @@
+sign=4/4 key=Fm tempo=80
+
+config: | ||
+count:
+    D: | chfq{1,2,3} ohfq4 || .
+
+verse1:
+    D:  | chfq{2,4} | chfq{2,4} || 
+    B:  | 1ffq.1 3ffhe2.5 | 7-1ffq.1 6-1ffhe2.5 ||
+    C0: | {1+1,5+1,1+2,3+2,5+2}mpq.1 {3+1,7+1,3+2,5+2,7+2}mphe2.5 
+        | {7,4+1,7+1,2+2,4+2}mpq.1 {6,3+1,6+1,1+2,3+2}mphe2.5 || .
+
+play: count verse1 x10
