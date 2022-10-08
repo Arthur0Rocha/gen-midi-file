@@ -1,0 +1,10 @@
+sign=4/4 key=D# tempo=87
+
+config: | ||
+count:
+    D: | chfq{1,2,3} ohfq4 || .
+
+verse1:
+    D:  | bdmfe{1,2.5,3.25,3.5} rgfe{2,4} chfe{1,2,3,4} chppe{1.5,2.5,3.5,4.5}  || .
+
+play: count verse1 x10
