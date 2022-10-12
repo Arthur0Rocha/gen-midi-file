@@ -99,45 +99,49 @@ def write(output, filename):
     f.close()
 
 if __name__ == "__main__":
+    TEMPO = 160
+
+    HIGH = 127
+    LOW = 0
+
     DRUM_CH = 9
     BASS_CH = 8
     SYNTH_CH = 7
     PAD_CH = 6
 
-    TEMPO = 160
-
     NOTE_BASS_DRUM = 35
     NOTE_CLOSED_HH = 42
     NOTE_SNARE = 38
     NOTE_CRASH = 49
-    inputs = [
-        (0,             DRUM_CH, 'note_on'  , NOTE_BASS_DRUM,   127),
-        (0,             DRUM_CH, 'note_on'  , NOTE_CLOSED_HH,   127),
-        (DIVISIONS,     DRUM_CH, 'note_off' , NOTE_BASS_DRUM,   0),
-        (0,             DRUM_CH, 'note_off' , NOTE_CLOSED_HH,   0),
-        (0,             DRUM_CH, 'note_on'  , NOTE_CLOSED_HH,   127),
-        (DIVISIONS,     DRUM_CH, 'note_off' , NOTE_CLOSED_HH,   0),
-        (0,             DRUM_CH, 'note_on'  , NOTE_CLOSED_HH,   127),
-        (0,             DRUM_CH, 'note_on'  , NOTE_SNARE,       127),
-        (DIVISIONS,     DRUM_CH, 'note_off' , NOTE_CLOSED_HH,   0),
-        (0,             DRUM_CH, 'note_off' , NOTE_SNARE,       0),
-        (0,             DRUM_CH, 'note_on'  , NOTE_CLOSED_HH,   127),
-        (DIVISIONS,     DRUM_CH, 'note_off' , NOTE_CLOSED_HH,   0),
 
-        (0,             DRUM_CH, 'note_on',     NOTE_BASS_DRUM, 127),
-        (0,             DRUM_CH, 'note_on',     NOTE_CLOSED_HH, 127),
-        (DIVISIONS,     DRUM_CH, 'note_off',    NOTE_BASS_DRUM, 0),
-        (0,             DRUM_CH, 'note_off',    NOTE_CLOSED_HH, 0),
-        (0,             DRUM_CH, 'note_on',     NOTE_CLOSED_HH, 127),
-        (DIVISIONS,     DRUM_CH, 'note_off',    NOTE_CLOSED_HH, 0),
-        (0,             DRUM_CH, 'note_on',     NOTE_CLOSED_HH, 127),
-        (0,             DRUM_CH, 'note_on',     NOTE_SNARE,     127),
-        (DIVISIONS,     DRUM_CH, 'note_off',    NOTE_CLOSED_HH, 0),
-        (0,             DRUM_CH, 'note_off',    NOTE_SNARE,     0),
-        (0,             DRUM_CH, 'note_on',     NOTE_CLOSED_HH, 127),
-        (DIVISIONS,     DRUM_CH, 'note_off',    NOTE_CLOSED_HH, 0),
-        (0,             DRUM_CH, 'note_on',     NOTE_CRASH,     127),
-        (3*DIVISIONS,   DRUM_CH, 'note_off',    NOTE_CRASH,     0),
+    inputs = [
+        (0,             DRUM_CH, 'note_on'  , NOTE_BASS_DRUM,   HIGH),
+        (0,             DRUM_CH, 'note_on'  , NOTE_CLOSED_HH,   HIGH),
+        (DIVISIONS,     DRUM_CH, 'note_off' , NOTE_BASS_DRUM,   LOW),
+        (0,             DRUM_CH, 'note_off' , NOTE_CLOSED_HH,   LOW),
+        (0,             DRUM_CH, 'note_on'  , NOTE_CLOSED_HH,   HIGH),
+        (DIVISIONS,     DRUM_CH, 'note_off' , NOTE_CLOSED_HH,   LOW),
+        (0,             DRUM_CH, 'note_on'  , NOTE_CLOSED_HH,   HIGH),
+        (0,             DRUM_CH, 'note_on'  , NOTE_SNARE,       HIGH),
+        (DIVISIONS,     DRUM_CH, 'note_off' , NOTE_CLOSED_HH,   LOW),
+        (0,             DRUM_CH, 'note_off' , NOTE_SNARE,       LOW),
+        (0,             DRUM_CH, 'note_on'  , NOTE_CLOSED_HH,   HIGH),
+        (DIVISIONS,     DRUM_CH, 'note_off' , NOTE_CLOSED_HH,   LOW),
+
+        (0,             DRUM_CH, 'note_on',     NOTE_BASS_DRUM, HIGH),
+        (0,             DRUM_CH, 'note_on',     NOTE_CLOSED_HH, HIGH),
+        (DIVISIONS,     DRUM_CH, 'note_off',    NOTE_BASS_DRUM, LOW),
+        (0,             DRUM_CH, 'note_off',    NOTE_CLOSED_HH, LOW),
+        (0,             DRUM_CH, 'note_on',     NOTE_CLOSED_HH, HIGH),
+        (DIVISIONS,     DRUM_CH, 'note_off',    NOTE_CLOSED_HH, LOW),
+        (0,             DRUM_CH, 'note_on',     NOTE_CLOSED_HH, HIGH),
+        (0,             DRUM_CH, 'note_on',     NOTE_SNARE,     HIGH),
+        (DIVISIONS,     DRUM_CH, 'note_off',    NOTE_CLOSED_HH, LOW),
+        (0,             DRUM_CH, 'note_off',    NOTE_SNARE,     LOW),
+        (0,             DRUM_CH, 'note_on',     NOTE_CLOSED_HH, HIGH),
+        (DIVISIONS,     DRUM_CH, 'note_off',    NOTE_CLOSED_HH, LOW),
+        (0,             DRUM_CH, 'note_on',     NOTE_CRASH,     HIGH),
+        (3*DIVISIONS,   DRUM_CH, 'note_off',    NOTE_CRASH,     LOW),
         
         
 
